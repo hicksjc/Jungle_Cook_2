@@ -1,0 +1,68 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  font-family: Gill-Italic;
+  font-size: 15px;
+  text-decoration: none;
+  color: #000;
+  padding-right: 50px;
+  padding-left: 50px;
+  a {
+    font-family: Gill-Italic;
+    font-size: 15px;
+    text-decoration: none;
+    color: #000;
+    padding-left: 100px;
+    margin-left: 15px;
+  }
+  .facebook {
+    //position: absolute;
+    margin-left: 125px;
+  }
+  .instagram {
+    //position: absolute;
+    margin-left: 175px;
+  }
+}
+
+@media only screen and (max-width: 768px) and(min-width: 400px) {
+  footer {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    width: 727.37px;
+    a {
+      padding-left: 0px;
+    }
+    .facebook {
+      padding-left: 38px;
+    }
+    .instagram {
+      padding-left: 68px;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  footer {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    min-height: 67px;
+    padding-left: 10px;
+    // padding-top: 100rem;
+    a {
+      padding-left: 0px;
+    }
+    .facebook {
+      padding-left: 10px;
+    }
+    .instagram {
+      padding-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+.app {
+  height: 100vh;
+}
+@font-face {
+  font-family: Caveat-Bold;
+  src: url(../css/fonts/Caveat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Caveat;
+  src: url(../css/fonts/Caveat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Gill-Italic;
+  src: url(../css/fonts/GillSans-Italic.ttf);
+}
+
+@font-face {
+  font-family: Gill-Light;
+  src: url(../css/fonts/GillSans-Light.ttf);
+}
+@font-face {
+  font-family: Gill;
+  src: url(../css/fonts/GillSans.ttf);
+}

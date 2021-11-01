@@ -1,0 +1,419 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+.app {
+  height: 100vh;
+}
+
+@font-face {
+  font-family: Caveat-Bold;
+  src: url(../css/fonts/Caveat-Bold.ttf);
+}
+@font-face {
+  font-family: Caveat;
+  src: url(../css/fonts/Caveat-Regular.ttf);
+}
+@font-face {
+  font-family: Gill-Italic;
+  src: url(../css/fonts/GillSans-Italic.ttf);
+}
+@font-face {
+  font-family: Gill-Light;
+  src: url(../css/fonts/GillSans-Light.ttf);
+}
+@font-face {
+  font-family: Gill;
+  src: url(../css/fonts/GillSans.ttf);
+}
+.navBar {
+  position: absolute;
+  width: 100%;
+  padding-left: 40px;
+  min-height: 50px;
+  margin-top: 38px;
+}
+.navBar img {
+  margin-right: 40%;
+}
+.navBar a {
+  font-family: Caveat;
+  font-size: 25px;
+  text-decoration: none;
+  color: #000;
+  padding-right: 100px;
+}
+
+.navToggle {
+  position: absolute;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.navToggle i {
+  margin-left: 40rem;
+}
+
+.fas {
+  display: none;
+}
+
+button {
+  background-color: #ffd972;
+  font-family: Caveat;
+  font-size: 25px;
+  width: 158px;
+  height: 52px;
+  border: 0px solid;
+  border-radius: 50px;
+  -webkit-box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.16);
+          box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.16);
+}
+
+.logo {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+@media only screen and (max-width: 360px) {
+  .navBar a {
+    display: none;
+  }
+
+  .login_btn {
+    display: none;
+  }
+
+  .fas {
+    display: inline-block;
+  }
+
+  .navOpen a {
+    display: inline;
+  }
+  .navOpen .login_btn {
+    display: inline;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navBar {
+    margin-top: 0px;
+  }
+  .navBar a {
+    display: none;
+  }
+
+  .login_btn {
+    display: none;
+  }
+
+  .fas {
+    display: inline-block;
+    margin-left: 80%;
+  }
+
+  .navOpen a {
+    display: inline;
+  }
+  .navOpen .login_btn {
+    display: inline;
+  }
+}
+.home {
+  height: 100%;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(242, 92, 84, 0.8)), to(rgba(242, 92, 84, 0.8))), url(../images/hero.jpg);
+  background-image: linear-gradient(to right, rgba(242, 92, 84, 0.8), rgba(242, 92, 84, 0.8)), url(../images/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.circle-holder {
+  width: 400px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+.circle-holder .little-circle {
+  position: absolute;
+  width: 167.88px;
+  height: 167.88px;
+  background-color: #fcbcb8;
+  border-radius: 150px;
+  margin-left: 340px;
+  margin-top: -240px;
+  z-index: 0;
+}
+.circle-holder .little-circle .little-circle-text {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 37.77px;
+  width: 107.76px;
+  font-size: 10px;
+  margin-top: 45px;
+  margin-left: 45px;
+  font-family: Gill-Italic;
+}
+.circle-holder .big-circle {
+  width: 357.58px;
+  height: 357.58px;
+  background-color: #ffd972;
+  border-radius: 250px;
+  z-index: 1;
+}
+.circle-holder .big-circle .circle-header {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 30px;
+  width: 163px;
+  font-size: 24px;
+  margin-top: 100px;
+  margin-left: 100px;
+  font-family: Caveat-Bold;
+}
+.circle-holder .big-circle .big-circle-text {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
+  height: 80px;
+  width: 164px;
+  font-size: 13px;
+  margin-top: 50px;
+  margin-left: 100px;
+  font-family: Gill;
+}
+
+@media only screen and (max-width: 360px) {
+  .home {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle-holder {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+  .circle-holder .little-circle {
+    position: absolute;
+    width: 121.04px;
+    height: 121.04px;
+  }
+  .circle-holder .little-circle .little-circle-text {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 8px;
+    margin-left: 15px;
+  }
+  .circle-holder .big-circle {
+    width: 257.81px;
+    height: 257.81px;
+  }
+  .circle-holder .big-circle .circle-header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 17px;
+    margin-bottom: -40px;
+    margin-left: 90px;
+  }
+  .circle-holder .big-circle .big-circle-text {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 9px;
+    width: 114px;
+    -moz-text-align-last: center;
+         text-align-last: center;
+    margin-left: 80px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .home {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  .home .circle-holder .little-circle {
+    margin-left: 210px;
+    margin-top: -350px;
+  }
+  .home .circle-holder .big-circle .big-circle-text {
+    -moz-text-align-last: center;
+         text-align-last: center;
+  }
+}
+.login_form {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #ffd972;
+}
+.login_form .login input {
+  background-color: #ffd972;
+  margin-bottom: 30px;
+  border: 0px solid;
+  border-bottom: 2px solid black;
+}
+.login_form .sign_up input {
+  background-color: #ffd972;
+  margin-bottom: 30px;
+  border: 0 solid;
+  border-bottom: 2px solid black;
+}
+
+@media only screen and (max-width: 375px) {
+  .login_form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .login_form .login {
+    top: 0;
+  }
+  .login_form .sign_up {
+    bottom: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .login_form {
+    padding-top: 5rem;
+    padding-left: 3rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .login_form .login {
+    top: 0;
+  }
+  .login_form .sign_up {
+    bottom: 0;
+  }
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  font-family: Gill-Italic;
+  font-size: 15px;
+  text-decoration: none;
+  color: #000;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+footer a {
+  font-family: Gill-Italic;
+  font-size: 15px;
+  text-decoration: none;
+  color: #000;
+  padding-left: 100px;
+  margin-left: 15px;
+}
+footer .facebook {
+  margin-left: 125px;
+}
+footer .instagram {
+  margin-left: 175px;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 400px) {
+  footer {
+    position: absolute;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 40px;
+    width: 727.37px;
+  }
+  footer a {
+    padding-left: 0px;
+  }
+  footer .facebook {
+    padding-left: 38px;
+  }
+  footer .instagram {
+    padding-left: 68px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  footer {
+    position: absolute;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 360px;
+    min-height: 67px;
+    padding-left: 10px;
+  }
+  footer a {
+    padding-left: 0px;
+  }
+  footer .facebook {
+    padding-left: 10px;
+  }
+  footer .instagram {
+    padding-left: 20px;
+  }
+}

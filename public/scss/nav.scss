@@ -1,0 +1,99 @@
+.navBar {
+  position: absolute;
+  width: 100%;
+  padding-left: 40px;
+  min-height: 50px;
+  margin-top: 38px;
+  img {
+    margin-right: 40%;
+  }
+  a {
+    //display: none;
+    font-family: Caveat;
+    font-size: 25px;
+    text-decoration: none;
+    color: #000;
+    padding-right: 100px;
+  }
+}
+.navToggle {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  i {
+    margin-left: 40rem;
+  }
+}
+.fas {
+  display: none;
+}
+
+button {
+  //display: none;
+  background-color: #ffd972;
+  font-family: Caveat;
+  font-size: 25px;
+  width: 158px;
+  height: 52px;
+  border: 0px solid;
+  border-radius: 50px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.16);
+}
+
+.logo {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+@media only screen and (max-width: 360px) {
+  .navBar {
+    a {
+      display: none;
+    }
+  }
+  .navToggle {
+    //change margin
+  }
+  .login_btn {
+    display: none;
+  }
+  .fas {
+    display: inline-block;
+  }
+  .navOpen {
+    a {
+      display: inline;
+    }
+    .login_btn {
+      display: inline;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navBar {
+    margin-top: 0px;
+    a {
+      display: none;
+    }
+    // img {
+    //  min-height: 100px;
+    // }
+  }
+  .login_btn {
+    display: none;
+  }
+  .fas {
+    display: inline-block;
+    margin-left: 80%;
+  }
+  .navOpen {
+    a {
+      display: inline;
+    }
+    .login_btn {
+      display: inline;
+    }
+  }
+}
