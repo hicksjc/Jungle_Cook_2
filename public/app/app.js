@@ -3,15 +3,18 @@ const navLinks = document.querySelectorAll('.nav__Link');
 
 
 function showContent(pageID){
-    console.log(pageID);
+    //console.log(pageID);
 }
 
+// Show Login Form
 function show_login(){
     // MODEL.route("login");
     // console.log(window.location.pathname + "#/login");
     // root from in-info-web4.informatics.edu /~username/class-folder/Jungle_Cook/index.html#login
-    window.location.href = "/~hicksjc/N315/Jungle_Cook_2/index.html#/login";
+    //window.location.href = "/Jungle_Cook_2/public/index.html#/login";
+    MODEL.route("login", showContent);
 }
+// Init Firebase Function, Show if User is Signed in or not
 function initFirebase(){
     firebase.auth().onAuthStateChanged(function (user){
         if (user){
@@ -21,6 +24,7 @@ function initFirebase(){
         }
     });
 }
+// Create a user using the Sign up Form
 function createUser(){
     console.log("I've been called!!");
     let password = $("#password_Signup").val();
@@ -40,7 +44,9 @@ function createUser(){
         //..
     });
 }
+// Log in with the Login Form
 function login(){
+    console.log("Login");
     let password = $("#password").val();
     let email = $("#Email").val();
     firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
@@ -53,6 +59,7 @@ function login(){
         console.log(errorMessage);
       });
 }
+//Sign a user out with a signout button!!
 function signOut(){
     firebase.auth().signOut().then(() => {
         console.log("Signed Out");
@@ -61,18 +68,18 @@ function signOut(){
     })
 }
 
+//Inject the page and make sure the hamburger menu opens by adding a class to the navigation!
 function initListeners(){
-
     
-    
-    console.log(navToggle);
+    //console.log(navToggle);
     $(window).on("hashchange", function(e){
-        let hashTag = window.location.hash;
-        let pageID = hashTag.replace("#/", "");
+        // let hashTag = window.location.hash;
+        // let pageID = hashTag.replace("#/", "");
+        let navID = e.currentTarget.id;
         // console.log(pageID);
 
-        MODEL.route(pageID);
-        if (pageID == "login"){
+        MODEL.route(navID, showContent);
+        if (navID == "login"){
             initLoginFunction();
         }
     })
@@ -88,37 +95,13 @@ function initListeners(){
         })
     })
 }
-function initLoginFunction(){
-    $(".signin_btn").click(function(e){
-        e.preventDefault();
-        let btnID = e.currentTarget.id;
-        if (btnID == "create"){
-            createUser();
-        } else if (btnID == "log_in"){
-            login();
-        } else {
-            signOut();
-        }
-    });
-    $(".login_form_btn").click(function(e){
-        e.preventDefault();
-        let btnID = e.currentTarget.id;
-        if (btnID == "create"){
-            createUser();
-        } else if (btnID == "log_in"){
-            login();
-        } else {
-            signOut();
-        }
-    });
-}
 
 
 $(document).ready(function(){
     initListeners();
     // root from in-info-web4.informatics.edu /~username/class-folder/Jungle_Cook/index.html#home
     // window.location.href = "index.html#/home";
-    window.location.href = "/~hicksjc/N315/Jungle_Cook_2/index.html#/home";
+    //window.location.href = "/Jungle_Cook_2/public/index.html#/home";
     try{
         let app = firebase.app();
         initFirebase();

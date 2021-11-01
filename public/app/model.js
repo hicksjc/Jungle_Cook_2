@@ -1,16 +1,15 @@
 var MODEL = (function(){
     function _route(navID, callback){
-        // let hashTag = window.location.hash;
-        // let pageID = hashTag.replace("#/", "");
-        // console.log(hashTag);
+        let hashTag = window.location.hash;
+        let pageID = hashTag.replace("#/", "");
+        console.log(hashTag);
 
-        //if (!pageID){
-        // if (navID == "home"){
-        //     navToPage("home");
-        // } else {
-        //     navToPage(pageID);
-        // }
-        navToPage(navID);
+        if (!pageID){
+        if (navID == "home"){
+            navToPage("home");
+        } else {
+            navToPage(pageID);
+        }
 
         if (callback){
             callback(navID);
@@ -27,4 +26,5 @@ var MODEL = (function(){
     return {
         route : _route
     }
+}
 })();
