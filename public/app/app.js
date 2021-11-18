@@ -1,6 +1,10 @@
 const navToggle = document.querySelector('.navToggle');
 const navLinks = document.querySelectorAll('.nav__Link');
+const login_btn = document.getElementById('login_nav');
+const signout_btn = document.getElementById('signout_nav');
 
+var ingredCounter = 3;
+var instruCounter = 3;
 
 function showContent(pageID){
     //console.log(pageID);
@@ -49,6 +53,8 @@ function login(){
     console.log("Login");
     let password = $("#password").val();
     let email = $("#Email").val();
+    login_btn.style.display = "none";
+    signout_btn.style.display = "inline";
     firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
         //Signed In
         var user = userCredential.user;
@@ -61,6 +67,8 @@ function login(){
 }
 //Sign a user out with a signout button!!
 function signOut(){
+    login_btn.style.display = "inline";
+    signout_btn.style.display = "none";
     firebase.auth().signOut().then(() => {
         console.log("Signed Out");
     }).catch((error) => {
@@ -73,41 +81,111 @@ function initListeners(){
     
     //console.log(navToggle);
     $(window).on("hashchange", function(e){
-        // let hashTag = window.location.hash;
-        // let pageID = hashTag.replace("#/", "");
+        //get the id of the navigations
         let navID = e.currentTarget.id;
         // console.log(pageID);
 
+        //pass the navID to the route.
         MODEL.route(navID, showContent);
         if (navID == "login"){
             initLoginFunction();
         }
     })
 
-
+    //navToggle = hamburger menu, when the hamburger menu is clicked it adds a class to the navigation called navOpen that opens up the navigation.
     navToggle.addEventListener('click', () => {
-        document.getElementById('nav').classList.toggle('navOpen');
+        //adds a class that opens up the nav
+        document.getElementById('nav').classList.add('navOpen');
         console.log("class added");
     });
+    //when any link inside of the navigation is clicked it removes the navOpen class.
     navLinks.forEach(link => {
         link.addEventListener('click', (e) =>{
             document.getElementById('nav').classList.remove('navOpen');
+            console.log("Class Removed");
         })
     })
 }
 
+function loadBrowse() {
+    //Retrieve the JSON data from data.json
+    $.getJSON("data/data.json", function(recipes){
+        //create a function that displays each separate part of data into the div elements when on the browse page
+        $.each(recipes.PIZZA, function(index, recipe){
+            console.log("hello");
+            $(".pizza-info").append(`<div class="title"><h3>${recipe.recipeName}</h3></div>
+            <div class="description"><p>${recipe.recipeDescription}</p></div>
+            <div class="time"><p>${recipe.time}</p></div>
+            <div class="servings"><p>${recipe.servings}</p></div>`);
+        });
+        
+    });
+    // $.getJSON("data/data.json", function (recipes) {
+    //   console.log(recipes.CHICKEN);
+  
+    //   $.each(recipes.CHICKEN, function (index, recipe) {
+    //     console.log("recipe " + recipe.recipeName);
+    //     $("#chicken").append(
+    //       `<div class="title"><h3>${recipe.recipeName}</h3></div>
+    //       <div class="description"><p>${recipe.recipeDescription}</p></div>
+    //           <div class="time">${recipe.time}</div>
+    //           <div class="servings">${recipe.servings}</div>`
+    //     );
+    //   });
+    // });
+    // $.getJSON("data/data.json", function (recipes) {
+    //   console.log(recipes.CHOWMEIN);
+  
+    //   $.each(recipes.CHOWMEIN, function (index, recipe) {
+    //     console.log("recipe " + recipe.recipeName);
+    //     $("#chow").append(
+    //       `<div class="title"><h3>${recipe.recipeName}</h3></div>
+    //       <div class="description"><p>${recipe.recipeDescription}</p></div>
+    //           <div class="time">${recipe.time}</div>
+    //           <div class="servings">${recipe.servings}</div>`
+    //     );
+    //   });
+    // });
+    // $.getJSON("data/data.json", function (recipes) {
+    //   console.log(recipes.BURGER);
+  
+    //   $.each(recipes.BURGER, function (index, recipe) {
+    //     console.log("recipe " + recipe.recipeName);
+    //     $("#burger").append(
+    //       `<div class="title"><h3>${recipe.recipeName}</h3></div>
+    //       <div class="description"><p>${recipe.recipeDescription}</p></div>
+    //           <div class="time">${recipe.time}</div>
+    //           <div class="servings">${recipe.servings}</div>`
+    //     );
+    //   });
+    // });
+  }
+
+
+function addIngred(){
+    ingredCounter++;
+    $(".create-recipe-form-ing").append(`<input id="ind${ingredCounter}" type="text" placeholder="Ingredient #${ingredCounter}"/>`);
+}
+function addInst(){
+    instruCounter++;
+    $(".create-recipe-form-inst").append(`<input id="inst${instruCounter}" type="text" placeholder="Instruction #${instruCounter}"/>`);
+}
 
 $(document).ready(function(){
     initListeners();
     // root from in-info-web4.informatics.edu /~username/class-folder/Jungle_Cook/index.html#home
     // window.location.href = "index.html#/home";
     //window.location.href = "/Jungle_Cook_2/public/index.html#/home";
+    loadBrowse();
     try{
         let app = firebase.app();
         initFirebase();
         initListeners();
+        
     } catch (e) {
         console.log(e);
     }
     MODEL.route("home", showContent);
 })
+
+//Deploy to firebase and then get the URL for that

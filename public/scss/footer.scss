@@ -1,12 +1,17 @@
 footer {
-  position: absolute;
+  width: 100%;
+  position: fixed;
   bottom: 0;
   font-family: Gill-Italic;
   font-size: 15px;
   text-decoration: none;
   color: #000;
-  padding-right: 50px;
-  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  // padding-right: 50px;
+  // padding-left: 50px;
   a {
     font-family: Gill-Italic;
     font-size: 15px;

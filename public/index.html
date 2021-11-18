@@ -12,44 +12,25 @@
      
     
         <nav class="navBar" id="nav">
-            <img src="images/logo.svg" alt="logo">
+            <div class="logo"><img src="images/logo.svg" alt="logo"></div>
+            <div class="link-nav">
             <a href="#/home" class="nav__link" id="home">Home</a>
             <a href="#/browse" class="nav__link" id="browse">Browse</a>
             <a href="#/recipe" class="nav__link" id="recipe">Create Recipe</a>
-            <button class="login_btn" onclick="show_login()">Login</button>
+            <a href="#/login" class="login_btn" id="login_nav">Login</a>
+            <button class="login_btn" onclick="signOut()" id="signout_nav">Signout</button>
+        </div>
         </nav>
 
         <nav class="navToggle"><i class="fas fa-bars fa-3x"></i></nav>
 
     
 
-
+<div class="flex-container">    
     <div class="app">
-        <!-- <div class="login_form">
-            <div class="login">
-                <h2>Login Here!</h2>
-                <input type="text" placeholder="Email Address" id="Email">
-                <div class="border"></div>
-                <input type="text" placeholder="Password" id="password">
-                <div class="border"></div>
-                <button class="login_form_btn" id="log_in">Login</button>
-            </div>
-            <div class="sign_up">
-                <h3>don't have an account?</h3>
-                <h2>Sign Up!</h2>
-                <input type="text" placeholder="First Name">
-                <div class="border"></div>
-                <input type="text" placeholder="Last Name">
-                <div class="border"></div>
-                <input type="text" placeholder="Email Address" id="Email_Signup">
-                <div class="border"></div>
-                <input type="text" placeholder="Password" id="password_Signup">
-                <div class="border"></div>
-                <button class="signin_btn" id="create">Sign</button>
-            </div>
-    </div>   -->
     </div>  
 
+    
     <footer>
         Copyright &copy; The Jungle Cook
         <a href="#/login">Login</a>
@@ -60,7 +41,7 @@
         <img class="facebook" src="images/facebook.svg" alt="facebook" height="19px" width="19px">
         <img class="instagram" src="images/instagram.svg" alt="instagram" height="19px" width="19px">
     </footer>
-
+</div>
     
 
 <!-- update the version number as needed -->

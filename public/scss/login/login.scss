@@ -13,6 +13,16 @@
       border: 0px solid;
       border-bottom: 2px solid black;
     }
+    .login_form_btn {
+      background-color: #ffd972;
+      font-family: Caveat;
+      font-size: 25px;
+      width: 158px;
+      height: 52px;
+      border: 0px solid;
+      border-radius: 50px;
+      box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.16);
+    }
   }
   .sign_up {
     input {
@@ -20,6 +30,16 @@
       margin-bottom: 30px;
       border: 0 solid;
       border-bottom: 2px solid black;
+    }
+    .signin_btn {
+      background-color: #ffd972;
+      font-family: Caveat;
+      font-size: 25px;
+      width: 158px;
+      height: 52px;
+      border: 0px solid;
+      border-radius: 50px;
+      box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.16);
     }
   }
 }

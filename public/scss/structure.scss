@@ -16,10 +16,16 @@ h6,
 p {
   margin-bottom: 16px;
 }
-
+.flex-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .app {
   height: 100vh;
 }
+
 @font-face {
   font-family: Caveat-Bold;
   src: url(../css/fonts/Caveat-Bold.ttf);
