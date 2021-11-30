@@ -7,9 +7,16 @@ var ingredCounter = 3;
 var instruCounter = 3;
 
 function showContent(pageID){
-    //console.log(pageID);
+    console.log(pageID);
+    if(pageID == "view"){
+        initView();
+    }
 }
-
+function initView(){
+    const pizzaView = document.querySelector(".pizza");
+    console.log(pizzaView);
+    pizzaView.addEventListener("click", showEdit);
+}
 // Show Login Form
 function show_login(){
     // MODEL.route("login");
@@ -35,18 +42,23 @@ function createUser(){
     let email = $("#Email_Signup").val();
     let fName = "James";
     let lName = "Hicks";
-
+    
     firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
         //signed in
         var user = userCredential.user;
         console.log(userCredential.user);
         //...
+        window.location.href = "index.html#/browse";
+        login_btn.style.display = "none";
+        signout_btn.style.display = "inline";
     }).catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
         //..
     });
+
+    
 }
 // Log in with the Login Form
 function login(){
@@ -59,6 +71,7 @@ function login(){
         //Signed In
         var user = userCredential.user;
       console.log("Signed In");
+      window.location.href = "index.html#/browse";
     }).catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -171,12 +184,18 @@ function addInst(){
     $(".create-recipe-form-inst").append(`<input id="inst${instruCounter}" type="text" placeholder="Instruction #${instruCounter}"/>`);
 }
 
+function showEdit(){
+    window.location.href="index.html#/edit";
+    console.log("hello world");
+}
+
 $(document).ready(function(){
     initListeners();
     // root from in-info-web4.informatics.edu /~username/class-folder/Jungle_Cook/index.html#home
     // window.location.href = "index.html#/home";
     //window.location.href = "/Jungle_Cook_2/public/index.html#/home";
     loadBrowse();
+    signout_btn.style.display = "none";
     try{
         let app = firebase.app();
         initFirebase();

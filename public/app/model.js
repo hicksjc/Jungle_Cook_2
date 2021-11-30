@@ -5,20 +5,19 @@ var MODEL = (function(){
 
         if (!pageID){
             if(navID =="home"){
-                navToPage("home");
+                navToPage("home", callback);
             }
         }
         else {
-            navToPage(pageID);
-        }
-
-        if(callback){
-            callback(pageID);
+            navToPage(pageID, callback);
         }
     }
-    function navToPage(pageName){
+    function navToPage(pageName, callback){
         $.get(`pages/${pageName}/${pageName}.html`, function(data){
             $(".app").html(data);
+            if(callback){
+                callback(pageName);
+            }
         });
     }
     return {

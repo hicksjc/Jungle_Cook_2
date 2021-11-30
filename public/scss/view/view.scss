@@ -13,4 +13,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  .recipe {
+    display: flex;
+    margin-bottom: 700px;
+    margin-right: 900px;
+    margin-top: 300px;
+  }
+  h2 {
+    position: relative;
+    right: 300px;
+    bottom: 100px;
+    font-size: 25px;
+    font-family: Caveat B;
+    width: 300px;
+  }
+  .pizza {
+    width: 300px;
+    height: 263px;
+    background-image: url(../images/recipe-pizza.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    border-radius: 15px;
+    margin-bottom: 600px;
+    margin-left: 380px;
+    margin-top: 300px;
+    .info-pizza {
+      width: 224px;
+      height: 263px;
+      background-color: white;
+      border-radius: 15px;
+      display: inline-block;
+      margin-left: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .view {
+    display: flex;
+    flex-direction: column;
+  }
 }

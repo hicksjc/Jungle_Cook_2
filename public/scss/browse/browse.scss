@@ -15,7 +15,7 @@
   justify-content: center;
   .recipe {
     display: flex;
-    margin-bottom: 500px;
+    margin-bottom: 400px;
     margin-right: 900px;
   }
   h2 {
@@ -123,37 +123,7 @@
   }
 }
 @media only screen and (max-width: 360px) {
-  .browse {
-    display: grid;
-    grid-template: 1fr/ 1fr /1fr / 1fr;
-    place-items: center;
-  }
-  .browse > * {
-    grid-column: 1fr/1fr/1fr/1fr;
-    grid-row: 1fr/1fr/1fr/1fr;
-  }
-  .browse .burger {
-    z-index: 2;
-  }
-  .browse .pizza {
-    z-index: 1;
-  }
 }
 
 @media only screen and (max-width: 768px) {
-  .browse {
-    display: grid;
-    grid-template: 1fr/ 1fr /1fr / 1fr;
-    place-items: center;
-  }
-  .browse > * {
-    grid-column: 1fr/1fr/1fr/1fr;
-    grid-row: 1fr/1fr/1fr/1fr;
-  }
-  .browse .burger {
-    z-index: 2;
-  }
-  .browse .pizza {
-    z-index: 1;
-  }
 }
